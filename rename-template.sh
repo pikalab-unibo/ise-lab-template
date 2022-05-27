@@ -12,7 +12,7 @@ for EXT in tex sty bib; do
 done
 
 for FILE in `ls ise-lab-$NEW_NAME.{tex,sty,bib} .gitignore .github/workflows/*.yml`; do
-     sed -i'' -e "s/ise-lab-template/ise-lab-$NEW_NAME/g" $FILE
+    sed -i '.bak' -e "s/ise-lab-template/ise-lab-$NEW_NAME/g" $FILE
 done
 
-rm *.sh
+rm *.bak .github/workflows/*.bak *.sh
